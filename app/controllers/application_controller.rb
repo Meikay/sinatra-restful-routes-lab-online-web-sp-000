@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
     @recipes = Recipe.all
     erb :index
   end
-  
+
   get '/recipe/:id' do  #loads display pg
     @recipe = Recipe.find_by_id(params[:id])
     erb :display
