@@ -9,6 +9,9 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-
+  get '/index' do
+    @recipe = Recipe.create(name: params[:name], recipe: params[:recipe])
+    @recipe.save
+  end
 
 end
